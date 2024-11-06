@@ -11,7 +11,12 @@ export function PasswordInput() {
 
   return (
     <div className="relative">
-      <Input type={showPassword ? 'text' : 'password'} className="pr-10" />
+      <Input
+        id="password"
+        name="password"
+        type={showPassword ? 'text' : 'password'}
+        className="pr-10"
+      />
       <button
         type="button"
         className="absolute right-0 top-0 h-full px-3 py-2 hover:bg-transparent"

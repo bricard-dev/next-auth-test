@@ -17,7 +17,7 @@ const navItems = [
 
 export default function Header() {
   return (
-    <header className="p-6 border-b">
+    <header className="min-h-16 px-6 flex items-center justify-between border-b">
       <h1 className="sr-only">Blog</h1>
       <nav className="flex items-center gap-4">
         {navItems.map((item) => (
@@ -26,6 +26,9 @@ export default function Header() {
           </Link>
         ))}
       </nav>
+      <div>
+        <Link href="/signup">Sign up</Link>
+      </div>
     </header>
   );
 }

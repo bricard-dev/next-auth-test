@@ -22,3 +22,7 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.text-error {
+  @apply text-red-500 text-sm;
+}
