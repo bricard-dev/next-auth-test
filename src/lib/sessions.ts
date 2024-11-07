@@ -37,3 +37,21 @@ export async function createSession(userId: number) {
     path: '/',
   });
 }
+
+export async function updateSession() {
+  const session = (await cookies()).get('session')?.value;
+  const payload = await decrypt(session);
+
+  if (!session || !payload) {
+    return null;
+  }
+
+  const expires = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000);
+  (await cookies()).set('session', session, {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === 'production',
+    expires,
+    sameSite: 'lax',
+    path: '/',
+  });
+}
