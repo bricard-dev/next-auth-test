@@ -15,14 +15,11 @@
 }
 
 body {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply h-screen flex flex-col text-foreground bg-background;
 }
 
-.text-error {
-  @apply text-red-500 text-sm;
+@layer utilities {
+  .text-error {
+    @apply text-red-500;
+  }
 }
