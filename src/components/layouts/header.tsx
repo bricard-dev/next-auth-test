@@ -31,6 +31,9 @@ export default function Header() {
       <div className="flex items-center gap-2">
         <ModeToggle />
         <Button variant="outline">
+          <Link href="/login">Login</Link>
+        </Button>
+        <Button variant="default">
           <Link href="/signup">Sign up</Link>
         </Button>
       </div>
