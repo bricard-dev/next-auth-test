@@ -64,9 +64,12 @@ export default function SignupForm() {
         <button
           type="submit"
           disabled={pending}
-          className={cn('px-3 py-2.5 rounded-md bg-blue-500', {
-            'opacity-50 cursor-not-allowed': pending,
-          })}
+          className={cn(
+            'px-3 py-2.5 rounded-md bg-blue-500 text-white transition-colors hover:bg-blue-600',
+            {
+              'opacity-50 cursor-not-allowed': pending,
+            }
+          )}
         >
           Sign up
         </button>
