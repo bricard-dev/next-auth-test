@@ -14,6 +14,8 @@ export default function LoginForm() {
     setEmail(e.target.value);
   }
 
+  console.log('LOGIN FORM:', state);
+
   return (
     <form action={action}>
       <div className="flex flex-col gap-4 text-sm">
@@ -34,7 +36,7 @@ export default function LoginForm() {
         <div className="flex flex-col gap-2">
           <label htmlFor="name">Password</label>
           <PasswordInput />
-          {state?.errors?.email && (
+          {state?.errors?.password && (
             <p className="text-error">{state.errors.password}</p>
           )}
         </div>
