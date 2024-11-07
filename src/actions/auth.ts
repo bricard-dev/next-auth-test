@@ -2,7 +2,7 @@
 
 import { createUser } from '@/lib/data';
 import { FormState, SignupFormSchema } from '@/lib/definitions';
-import { createSession } from '@/lib/sessions';
+import { createSession, deleteSession } from '@/lib/sessions';
 import bcrypt from 'bcryptjs';
 import { redirect } from 'next/navigation';
 
@@ -42,5 +42,10 @@ export async function signup(
   createSession(user.id);
 
   // Redirect user
+  redirect('/');
+}
+
+export async function logout() {
+  await deleteSession();
   redirect('/');
 }

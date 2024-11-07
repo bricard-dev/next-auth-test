@@ -58,5 +58,4 @@ export async function updateSession() {
 
 export async function deleteSession() {
   (await cookies()).delete('session');
-  // redirect('/login');
 }
