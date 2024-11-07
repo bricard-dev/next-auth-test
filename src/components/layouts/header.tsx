@@ -17,7 +17,7 @@ const navItems = [
 
 export default function Header() {
   return (
-    <header className="min-h-16 px-6 flex items-center justify-between border-b">
+    <header className="h-16 px-6 flex shrink-0 items-center justify-between border-b text-sm">
       <h1 className="sr-only">Blog</h1>
       <nav className="flex items-center gap-4">
         {navItems.map((item) => (
@@ -27,7 +27,12 @@ export default function Header() {
         ))}
       </nav>
       <div>
-        <Link href="/signup">Sign up</Link>
+        <Link
+          href="/signup"
+          className="px-3 py-2.5 border rounded-md hover:border-foreground hover:bg-foreground hover:text-background transition-colors"
+        >
+          Sign up
+        </Link>
       </div>
     </header>
   );
