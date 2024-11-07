@@ -67,7 +67,6 @@ export async function login(
   state: FormState,
   formData: FormData
 ): Promise<FormState> {
-  console.log('LOGIN');
   try {
     // Validate form fields
     const validatedFields = LoginFormSchema.safeParse({
