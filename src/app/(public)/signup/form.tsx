@@ -4,13 +4,13 @@ import { signup } from '@/actions/auth';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { PasswordInput } from '@/components/ui/password-input';
-import { useActionState, useState } from 'react';
+import { ChangeEvent, useActionState, useState } from 'react';
 
 export default function SignupForm() {
   const [state, action, pending] = useActionState(signup, undefined);
   const [fields, setFields] = useState({ name: '', email: '' });
 
-  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
+  function handleChange(e: ChangeEvent<HTMLInputElement>) {
     setFields({ ...fields, [e.target.name]: e.target.value });
   }
 
