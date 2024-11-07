@@ -1,9 +1,9 @@
 'use client';
 
 import { signup } from '@/actions/auth';
+import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { PasswordInput } from '@/components/ui/password-input';
-import { cn } from '@/lib/utils';
 import { useActionState, useState } from 'react';
 
 export default function SignupForm() {
@@ -61,18 +61,9 @@ export default function SignupForm() {
           </div>
         )}
 
-        <button
-          type="submit"
-          disabled={pending}
-          className={cn(
-            'px-3 py-2.5 rounded-md bg-blue-500 text-white transition-colors hover:bg-blue-600',
-            {
-              'opacity-50 cursor-not-allowed': pending,
-            }
-          )}
-        >
+        <Button type="submit" disabled={pending}>
           Sign up
-        </button>
+        </Button>
       </div>
     </form>
   );
