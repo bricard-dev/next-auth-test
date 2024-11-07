@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { ModeToggle } from '../ui/mode-toggle';
 
 const navItems = [
   {
@@ -26,7 +27,8 @@ export default function Header() {
           </Link>
         ))}
       </nav>
-      <div>
+      <div className="flex items-center">
+        <ModeToggle />
         <Link
           href="/signup"
           className="px-3 py-2.5 border rounded-md hover:border-foreground hover:bg-foreground hover:text-background transition-colors"
