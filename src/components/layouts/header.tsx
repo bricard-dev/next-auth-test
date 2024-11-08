@@ -1,8 +1,11 @@
+import { verifySession } from '@/lib/sessions';
 import Link from 'next/link';
+import HeaderActions from '../header-actions';
 import Navigation from '../navigation';
-import { ModeToggle } from '../ui/mode-toggle';
 
-export default function Header() {
+export default async function Header() {
+  const { isAuth } = await verifySession();
+
   return (
     <header className="h-16 px-6 flex shrink-0 items-center justify-between border-b text-sm">
       <div>
@@ -11,10 +14,8 @@ export default function Header() {
           Blog
         </Link>
       </div>
-      <Navigation />
-      <div className="flex items-center gap-2">
-        <ModeToggle />
-      </div>
+      <Navigation isAuth={isAuth} />
+      <HeaderActions isAuth={isAuth} />
     </header>
   );
 }
